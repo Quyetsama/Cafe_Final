@@ -117,7 +117,7 @@ namespace QuanLyQuanCafe_Nhom14
 
         private void guna2ImageButton3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             instance = null;
             Login fLogin = new Login();
             fLogin.Show();

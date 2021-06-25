@@ -112,16 +112,18 @@ namespace QuanLyQuanCafe_Nhom14
 
             try
             {
-                string doanhThuNow = DataProvider.Instance.ExecuteScalar("select sum(totalPrice) from Bill where DateCheckIn = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' group by DateCheckIn").ToString();
+                string doanhThuNow = "0", hoaDonNow = "0", daBanNow = "0";
+
+                doanhThuNow = DataProvider.Instance.ExecuteScalar("select sum(totalPrice) from Bill where DateCheckIn = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' group by DateCheckIn").ToString();
                 lblDoanhThu.Text = doanhThuNow.ToString() + " ₫";
 
-                string hoaDonNow = DataProvider.Instance.ExecuteScalar("select count(DateCheckIn) from Bill where DateCheckIn = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'").ToString();
+                hoaDonNow = DataProvider.Instance.ExecuteScalar("select count(DateCheckIn) from Bill where DateCheckIn = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'").ToString();
                 lblSLHoaDon.Text = hoaDonNow.ToString();
 
-                string daBanNow = DataProvider.Instance.ExecuteScalar("select sum(bi.count) from BillInfo as bi, Bill as b where DateCheckIn = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and bi.idBill = b.id group by b.DateCheckIn").ToString();
+                daBanNow = DataProvider.Instance.ExecuteScalar("select sum(bi.count) from BillInfo as bi, Bill as b where DateCheckIn = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and bi.idBill = b.id group by b.DateCheckIn").ToString();
                 lblSLDaBan.Text = daBanNow.ToString();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

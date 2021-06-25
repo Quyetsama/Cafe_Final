@@ -266,6 +266,7 @@ namespace QuanLyQuanCafe_Nhom14
             // 
             // panelMain
             // 
+            this.panelMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMain.BackgroundImage")));
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 100);
             this.panelMain.Name = "panelMain";

@@ -144,6 +144,7 @@ namespace QuanLyQuanCafe_Nhom14.DAO
                 }
 
                 data = cmd.ExecuteScalar();
+                
 
                 connection.Close();
 
@@ -152,6 +153,12 @@ namespace QuanLyQuanCafe_Nhom14.DAO
             {
                 MessageBox.Show(ex.ToString());
             }
+
+            if (data == null)
+            {
+                data = 0;
+            }
+
             return data;
 
 

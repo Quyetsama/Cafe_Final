@@ -96,62 +96,70 @@ namespace QuanLyQuanCafe_Nhom14
             btnLamMoi.Enabled = true;
             btnXoa.Enabled = true;
 
-            //Luu id
-            ID = dtgNhanVien.Rows[e.RowIndex].Cells["id"].Value.ToString();
+            try
+            {
+                //Luu id
+                ID = dtgNhanVien.Rows[e.RowIndex].Cells["id"].Value.ToString();
 
-            txtHoTen.Text = dtgNhanVien.Rows[e.RowIndex].Cells["name"].Value.ToString();
-            txtDiaChi.Text = dtgNhanVien.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString();
-            txtSDT.Text = dtgNhanVien.Rows[e.RowIndex].Cells["SoDienThoai"].Value.ToString();
-            txtCMND.Text = dtgNhanVien.Rows[e.RowIndex].Cells["CMND"].Value.ToString();
-            dateTimeNgaySinh.Value = Convert.ToDateTime(dtgNhanVien.Rows[e.RowIndex].Cells["NgaySinh"].Value);
-            string CaLam = dtgNhanVien.Rows[e.RowIndex].Cells["CaLamViec"].Value.ToString();
-            cbbCalamViec.BorderRadius = 12;
-            if (CaLam == "Cả ngày")
-            {
-                cbbCalamViec.SelectedIndex = 0;
-            }
-            else if (CaLam == "Sáng")
-            {
-                cbbCalamViec.SelectedIndex = 1;
-            }
-            else if (CaLam == "Chiều")
-            {
-                cbbCalamViec.SelectedIndex = 2;
-            }
-            else if (CaLam == "Tối")
-            {
-                cbbCalamViec.SelectedIndex = 3;
-            }
+                txtHoTen.Text = dtgNhanVien.Rows[e.RowIndex].Cells["name"].Value.ToString();
+                txtDiaChi.Text = dtgNhanVien.Rows[e.RowIndex].Cells["DiaChi"].Value.ToString();
+                txtSDT.Text = dtgNhanVien.Rows[e.RowIndex].Cells["SoDienThoai"].Value.ToString();
+                txtCMND.Text = dtgNhanVien.Rows[e.RowIndex].Cells["CMND"].Value.ToString();
+                dateTimeNgaySinh.Value = Convert.ToDateTime(dtgNhanVien.Rows[e.RowIndex].Cells["NgaySinh"].Value);
+                string CaLam = dtgNhanVien.Rows[e.RowIndex].Cells["CaLamViec"].Value.ToString();
+                cbbCalamViec.BorderRadius = 12;
+                if (CaLam == "Cả ngày")
+                {
+                    cbbCalamViec.SelectedIndex = 0;
+                }
+                else if (CaLam == "Sáng")
+                {
+                    cbbCalamViec.SelectedIndex = 1;
+                }
+                else if (CaLam == "Chiều")
+                {
+                    cbbCalamViec.SelectedIndex = 2;
+                }
+                else if (CaLam == "Tối")
+                {
+                    cbbCalamViec.SelectedIndex = 3;
+                }
 
-            string GioiTinh = dtgNhanVien.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString();
-            cbbGioiTinh.BorderRadius = 12;
-            if (GioiTinh == "Nam")
-            {
-                cbbGioiTinh.SelectedIndex = 0;
-            }
-            else
-            {
-                cbbGioiTinh.SelectedIndex = 1;
-            }
+                string GioiTinh = dtgNhanVien.Rows[e.RowIndex].Cells["GioiTinh"].Value.ToString();
+                cbbGioiTinh.BorderRadius = 12;
+                if (GioiTinh == "Nam")
+                {
+                    cbbGioiTinh.SelectedIndex = 0;
+                }
+                else
+                {
+                    cbbGioiTinh.SelectedIndex = 1;
+                }
 
-            string ChucVu = dtgNhanVien.Rows[e.RowIndex].Cells["ChucVu"].Value.ToString();
-            cbbChucVu.BorderRadius = 12;
-            if (ChucVu == "Quản lý")
-            {
-                cbbChucVu.SelectedIndex = 0;
+                string ChucVu = dtgNhanVien.Rows[e.RowIndex].Cells["ChucVu"].Value.ToString();
+                cbbChucVu.BorderRadius = 12;
+                if (ChucVu == "Quản lý")
+                {
+                    cbbChucVu.SelectedIndex = 0;
+                }
+                else if (ChucVu == "Nhân viên bán hàng")
+                {
+                    cbbChucVu.SelectedIndex = 1;
+                }
+                else if (ChucVu == "Nhân viên phục vụ")
+                {
+                    cbbChucVu.SelectedIndex = 2;
+                }
+                else if (ChucVu == "Nhân viên quét dọn")
+                {
+                    cbbChucVu.SelectedIndex = 3;
+                }
             }
-            else if (ChucVu == "Nhân viên bán hàng")
+            catch (Exception)
             {
-                cbbChucVu.SelectedIndex = 1;
+
             }
-            else if (ChucVu == "Nhân viên phục vụ")
-            {
-                cbbChucVu.SelectedIndex = 2;
-            }
-            else if (ChucVu == "Nhân viên quét dọn")
-            {
-                cbbChucVu.SelectedIndex = 3;
-            }
+            
         }
 
         private void btnThemSua_Click(object sender, EventArgs e)

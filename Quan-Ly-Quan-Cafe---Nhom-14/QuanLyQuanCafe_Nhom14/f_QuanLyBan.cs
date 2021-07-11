@@ -90,15 +90,19 @@ namespace QuanLyQuanCafe_Nhom14
             btnThemSua.Text = "Sửa";
             btnLamMoi.Enabled = true;
 
+            try
+            {
+                //Luu id
+                ID = dtgTable.Rows[e.RowIndex].Cells["idTable"].Value.ToString();
 
-            //Luu id
-            ID = dtgTable.Rows[e.RowIndex].Cells["idTable"].Value.ToString();
+                txtTenTable.Text = dtgTable.Rows[e.RowIndex].Cells["nameTable"].Value.ToString();
 
-            txtTenTable.Text = dtgTable.Rows[e.RowIndex].Cells["nameTable"].Value.ToString();
-
-            string viTri = dtgTable.Rows[e.RowIndex].Cells["positionTable"].Value.ToString();
-            cbbpositionTable.BorderRadius = 12;
-            cbbpositionTable.Text = viTri;
+                string viTri = dtgTable.Rows[e.RowIndex].Cells["positionTable"].Value.ToString();
+                cbbpositionTable.BorderRadius = 12;
+                cbbpositionTable.Text = viTri;
+            }
+            catch (Exception) { }
+            
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)

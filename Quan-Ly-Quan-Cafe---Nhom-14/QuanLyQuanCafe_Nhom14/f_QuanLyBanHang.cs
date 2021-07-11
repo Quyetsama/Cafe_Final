@@ -324,21 +324,7 @@ namespace QuanLyQuanCafe_Nhom14
             //}
         }
 
-        //Tim kiem
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            //List<Food> listFood = new List<Food>();
-
-            string query = string.Format("select * from Food where name like N'%{0}%' and status = N'Đang hoạt động'", txtSearch.Text);
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            //foreach(DataRow row in data.Rows)
-            //{
-            //    Food food = new Food(row);
-            //    listFood.Add(food);
-            //}
-            datagridFood.DataSource = data;
-            datagridFood.Columns["idCategory"].Visible = false;
-        }
+        
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
@@ -355,6 +341,30 @@ namespace QuanLyQuanCafe_Nhom14
             txtSearch.Text = "";
             txtSearch.SelectAll();
         }
-    
+
+        //Tim kiem
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string query = string.Format("select * from Food where name like N'%{0}%' and status = N'Đang hoạt động'", txtSearch.Text);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            datagridFood.DataSource = data;
+            datagridFood.Columns["idCategory"].Visible = false;
+        }
+
+        //Tim kiem
+        //private void guna2Button1_Click(object sender, EventArgs e)
+        //{
+        //    //List<Food> listFood = new List<Food>();
+
+        //    string query = string.Format("select * from Food where name like N'%{0}%' and status = N'Đang hoạt động'", txtSearch.Text);
+        //    DataTable data = DataProvider.Instance.ExecuteQuery(query);
+        //    //foreach(DataRow row in data.Rows)
+        //    //{
+        //    //    Food food = new Food(row);
+        //    //    listFood.Add(food);
+        //    //}
+        //    datagridFood.DataSource = data;
+        //    datagridFood.Columns["idCategory"].Visible = false;
+        //}
     }
 }

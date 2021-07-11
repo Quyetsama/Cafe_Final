@@ -114,23 +114,27 @@ namespace QuanLyQuanCafe_Nhom14
             btnThemSua.Text = "Sửa";
             btnLamMoi.Enabled = true;
 
+            try
+            {
+                //Luu id
+                ID = dtgDanhSachSP.Rows[e.RowIndex].Cells["idSP"].Value.ToString();
 
-            //Luu id
-            ID = dtgDanhSachSP.Rows[e.RowIndex].Cells["idSP"].Value.ToString();
+                txtTenSP.Text = dtgDanhSachSP.Rows[e.RowIndex].Cells["name"].Value.ToString();
+                txtGiaSP.Text = dtgDanhSachSP.Rows[e.RowIndex].Cells["price"].Value.ToString();
+                txtKhuyenMai.Text = dtgDanhSachSP.Rows[e.RowIndex].Cells["discount"].Value.ToString();
 
-            txtTenSP.Text = dtgDanhSachSP.Rows[e.RowIndex].Cells["name"].Value.ToString();
-            txtGiaSP.Text = dtgDanhSachSP.Rows[e.RowIndex].Cells["price"].Value.ToString();
-            txtKhuyenMai.Text = dtgDanhSachSP.Rows[e.RowIndex].Cells["discount"].Value.ToString();
-
-            string danhMuc = dtgDanhSachSP.Rows[e.RowIndex].Cells["nameCategory"].Value.ToString();
-            cbbDanhMuc.BorderRadius = 12;
-            cbbDanhMuc.Text = danhMuc;
+                string danhMuc = dtgDanhSachSP.Rows[e.RowIndex].Cells["nameCategory"].Value.ToString();
+                cbbDanhMuc.BorderRadius = 12;
+                cbbDanhMuc.Text = danhMuc;
 
 
 
-            string trangThai = dtgDanhSachSP.Rows[e.RowIndex].Cells["status"].Value.ToString();
-            cbbTrangThaiSP.BorderRadius = 12;
-            cbbTrangThaiSP.Text = trangThai;
+                string trangThai = dtgDanhSachSP.Rows[e.RowIndex].Cells["status"].Value.ToString();
+                cbbTrangThaiSP.BorderRadius = 12;
+                cbbTrangThaiSP.Text = trangThai;
+            }
+            catch (Exception) { }
+            
         }
 
         private void dtgTimKiemSP_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -138,23 +142,27 @@ namespace QuanLyQuanCafe_Nhom14
             btnThemSua.Text = "Sửa";
             btnLamMoi.Enabled = true;
 
+            try
+            {
+                //Luu id
+                ID = dtgTimKiemSP.Rows[e.RowIndex].Cells["idSPTK"].Value.ToString();
 
-            //Luu id
-            ID = dtgTimKiemSP.Rows[e.RowIndex].Cells["idSPTK"].Value.ToString();
+                txtTenSP.Text = dtgTimKiemSP.Rows[e.RowIndex].Cells["nameTK"].Value.ToString();
+                txtGiaSP.Text = dtgTimKiemSP.Rows[e.RowIndex].Cells["dongiaTK"].Value.ToString();
+                txtKhuyenMai.Text = dtgTimKiemSP.Rows[e.RowIndex].Cells["kmTK"].Value.ToString();
 
-            txtTenSP.Text = dtgTimKiemSP.Rows[e.RowIndex].Cells["nameTK"].Value.ToString();
-            txtGiaSP.Text = dtgTimKiemSP.Rows[e.RowIndex].Cells["dongiaTK"].Value.ToString();
-            txtKhuyenMai.Text = dtgTimKiemSP.Rows[e.RowIndex].Cells["kmTK"].Value.ToString();
-
-            string danhMuc = dtgTimKiemSP.Rows[e.RowIndex].Cells["danhmucTK"].Value.ToString();
-            cbbDanhMuc.BorderRadius = 12;
-            cbbDanhMuc.Text = danhMuc;
+                string danhMuc = dtgTimKiemSP.Rows[e.RowIndex].Cells["danhmucTK"].Value.ToString();
+                cbbDanhMuc.BorderRadius = 12;
+                cbbDanhMuc.Text = danhMuc;
 
 
 
-            string trangThai = dtgTimKiemSP.Rows[e.RowIndex].Cells["statusTK"].Value.ToString();
-            cbbTrangThaiSP.BorderRadius = 12;
-            cbbTrangThaiSP.Text = trangThai;
+                string trangThai = dtgTimKiemSP.Rows[e.RowIndex].Cells["statusTK"].Value.ToString();
+                cbbTrangThaiSP.BorderRadius = 12;
+                cbbTrangThaiSP.Text = trangThai;
+            }
+            catch (Exception) { }
+            
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
